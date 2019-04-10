@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+JavaFX-Version: 8.0
+Implementation-Vendor: 020074
+Implementation-Title: Timetable
+Implementation-Version: 1.0
+Class-Path: 
+Permissions: sandbox
+Created-By: JavaFX Packager
+Main-Class: TimetableApplication
+Codebase: *
+

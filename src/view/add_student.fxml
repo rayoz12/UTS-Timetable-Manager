@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="controller.Add_studentController">
+    <HBox spacing="20" alignment="CENTER" styleClass="header" GridPane.rowIndex="0"  >
+        <Text text="Add new student" styleClass="heading"/>      
+    </HBox>
+    
+    <HBox alignment="CENTER" styleClass="content">
+        <VBox styleClass="addStudentForm" alignment="CENTER" >
+            <GridPane vgap="10">
+                <Label text="Student number:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="numberTf" text="" GridPane.columnIndex="1" GridPane.rowIndex="0" onTextChange="#FormChanged"/>
+
+                <Label text="Student name:" GridPane.columnIndex="0" GridPane.rowIndex="1"  />
+                <TextField fx:id="nameTf" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" onTextChange="#FormChanged"/>
+
+                <Label text="Attendance:" GridPane.columnIndex="0" GridPane.rowIndex="2"  />
+                <HBox GridPane.columnIndex="1" GridPane.rowIndex="2" spacing="10"  >
+                    <fx:define>
+                        <ToggleGroup fx:id="attandanceGroup"/>
+                    </fx:define>
+                        <RadioButton text="Full Time" userData="ft" toggleGroup="$attandanceGroup" onAction="#registerRadioButtonClick"  />
+                        <RadioButton text="Part Time" userData="pt" toggleGroup="$attandanceGroup" onAction="#registerRadioButtonClick"  />
+                </HBox>
+
+                <Label text="Scholarship:" GridPane.columnIndex="0" GridPane.rowIndex="3"  />
+                <CheckBox fx:id="scholarshipCb" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                <HBox GridPane.columnSpan="2" GridPane.columnIndex="0" GridPane.rowIndex="4" alignment="CENTER"  ><Label text="" fx:id="errorMessage" styleClass="Error" /></HBox>
+                              
+            </GridPane>
+            
+        </VBox>  
+    </HBox>
+    
+    <HBox spacing="20" alignment="CENTER" styleClass="footer">
+        <Button text="Cancel" fx:id="cancel" onAction="#cancel" />
+        <Button text="Add" fx:id="addStudent" onAction="#addStudent" disable="true"/>
+    </HBox>
+    
+    <stylesheets>
+        <URL value="@add_student.css" />
+    </stylesheets>
+</VBox>

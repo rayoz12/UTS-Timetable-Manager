@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?> 
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.collections.*?> 
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentController">
+    <HBox  styleClass="header">
+        <HBox alignment="BASELINE_LEFT">
+            <Text text="Logged in as " fx:id="welcomeMessage" styleClass="heading" />
+        </HBox>
+        <Pane HBox.hgrow="ALWAYS" />        
+        <VBox styleClass="studentInfo" alignment="TOP_RIGHT" >
+            <GridPane vgap="10" hgap="10">
+                    <Label text="Student number:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <Text fx:id="infoNumber" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                    <!--<Text text="${controller.student.number}" GridPane.columnIndex="1" GridPane.rowIndex="0"/>  have to get this to work-->
+
+                    <Label text="Attendance:" GridPane.columnIndex="0" GridPane.rowIndex="1"  />
+                    <Text fx:id="infoAttendance" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                    <!--<Text text="${controller.student.attendance}" GridPane.columnIndex="1" GridPane.rowIndex="1"/>  have to get this to work-->
+
+                    <Label text="Scholarship: " GridPane.columnIndex="0" GridPane.rowIndex="2"  />
+                    <Text text="" fx:id="infoScholarship" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            </GridPane>
+        </VBox>
+    </HBox>
+    
+    <VBox alignment="CENTER" styleClass="content" spacing="5" >
+        <HBox>
+            <Text text="My Activities" styleClass="heading"/>
+            <Pane HBox.hgrow="ALWAYS" />
+            <Button text="Withdraw" fx:id="withdrawButton" alignment="CENTER_RIGHT" onAction="#withdraw" disable="true"  />
+        </HBox>
+        <TableView fx:id="currentActivityTable" prefHeight="230" >
+            <columns>
+                <TableColumn fx:id="activitySubject"  text="Subject" />
+                <TableColumn fx:id="activityGroup"   text="Group" /> 
+                <TableColumn fx:id="activityActivity"   text="Activity" /> 
+                <TableColumn fx:id="activityDay"   text="Day" /> 
+                <TableColumn fx:id="activityStart"   text="Start" /> 
+                <TableColumn fx:id="activityDuration"   text="Duration" /> 
+                <TableColumn fx:id="activityRoom"   text="Room" /> 
+                <TableColumn fx:id="activityCapacity"   text="Capacity" /> 
+                <TableColumn fx:id="activityEnrolled"   text="Enrolled" /> 
+            </columns>
+            <placeholder>
+                <Label text="Not enrolled in any activities"/>
+            </placeholder>       
+        </TableView>
+        
+        <HBox spacing="5" alignment="CENTER" >
+            <Text text="Enrol into subject" styleClass="heading" />
+            <ComboBox fx:id="SubjectsDropDown" prefWidth="200" onAction="#comboBoxAction"  >
+            </ComboBox>
+            <Pane HBox.hgrow="ALWAYS" />
+            <Button text="Enrol" fx:id="enrolButton" alignment="BOTTOM_RIGHT" onAction="#enrol" disable="true" />
+        </HBox>
+        <TableView fx:id="enrolTable" prefHeight="200">
+            <columns>
+                <TableColumn fx:id="enrolSubject" text="Subject" />
+                <TableColumn fx:id="enrolGroup" text="Group" /> 
+                <TableColumn fx:id="enrolActivity" text="Activity" /> 
+                <TableColumn fx:id="enrolDay" text="Day" /> 
+                <TableColumn fx:id="enrolStart" text="Start" /> 
+                <TableColumn fx:id="enrolDuration" text="Duration" /> 
+                <TableColumn fx:id="enrolRoom" text="Room" /> 
+                <TableColumn fx:id="enrolCapacity" text="Capacity" /> 
+                <TableColumn fx:id="enrolEnrolled" text="Enrolled" /> 
+            </columns>
+            <placeholder>
+                <Label text="Please select a subject"/>
+            </placeholder>           
+        </TableView>
+    </VBox>
+    
+    <HBox spacing="20" alignment="CENTER" styleClass="footer">
+        <Button text="Logout" fx:id="logout" onAction="#logout" />
+    </HBox>
+    
+    <stylesheets>
+        <URL value="@student.css" />
+    </stylesheets>
+    
+    
+</VBox>

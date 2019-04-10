@@ -1,0 +1,61 @@
+/*
+Please note that some styles not seen here are inline. Such as the Error text fill
+*/
+/* 
+    Created on : 21/05/2016, 2:11:33 PM
+    Author     : Ryan
+*/
+.addStudentForm
+{
+    -fx-background-color:white !important;
+    -fx-spacing: 10;
+    -fx-padding: 20;
+}
+.header
+{
+    -fx-background-color: #0099CC;
+    -fx-padding: 20;
+}
+.heading
+{
+    -fx-font-size: 32 px;
+    -fx-font-family: "Arial";
+    -fx-fill: #ffffff;
+    -fx-stroke: #ffffff;  
+    -fx-padding: 20;
+}
+.content
+{
+    -fx-background-color: #00749B;
+    -fx-padding: 20;
+}
+
+.Error
+{
+    -fx-text-fill: firebrick;
+}
+
+.footer
+{
+    -fx-background-color: #252B2B;
+    -fx-padding: 15;
+}
+Label
+{
+    -fx-font-weight: bold;
+    -fx-font-size: 12 px;
+    -fx-text-fill: #333333;
+}
+
+Button
+{
+    -fx-font-weight: bold;
+    -fx-background-color: #0099CC;
+    -fx-text-fill: white;
+}
+
+Button:hover{
+     -fx-background-color: #00BFFF;
+}
+
+
